@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Mood Tracker</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			/* Container for the buttons */
+			.mood-button-container {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				gap: 20px;
+				margin-top: 20px;
+			}
+
+			/* Style for each button */
+			.mood-button {
+				padding: 15px 30px;
+				font-size: 18px;
+				cursor: pointer;
+				border-radius: 5px;
+				border: none;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+				width: 150px;
+				height: 50px;
+				color: white;
+				font-weight: bold;
+				text-transform: uppercase; /* To ensure the button text is capitalized */
+				transition: background-color 0.3s ease;
+			}
+
+			/* Hover effect for the buttons */
+			.mood-button:hover {
+				opacity: 0.8;
+			}
+
+			/* Message display style */
+			#message {
+				margin-top: 30px;
+				font-size: 20px;
+				text-align: center;
+				color: #333;
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>Mood Tracker</h1>
+						<p>Capture your emotions, one day at a time.</p>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Content -->
+							<section id="content" class="main">
+								<span class="image main"><img src="images/sixth_image.jpg" alt="" /></span>
+                                <h2>Track Your Feelings</h2>
+                                <p>This space is here to help you understand and reflect on your emotions. Track your feelings daily and gain insights into your emotional journey.</p>
+                                <p>Tell us how you're feeling right now:</p>
+								
+								<!-- Mood Buttons -->
+								<div class="mood-button-container">
+									<button class="mood-button" style="background-color: #FFD700;" onclick="displayMessage('Happy')"><span>Happy</span></button>
+									<button class="mood-button" style="background-color: #1E90FF;" onclick="displayMessage('Sad')"><span>Sad</span></button>
+									<button class="mood-button" style="background-color: #DC143C;" onclick="displayMessage('Angry')"><span>Angry</span></button>
+									<button class="mood-button" style="background-color: #FF6347;" onclick="displayMessage('Anxious')"><span>Anxious</span></button>
+									<button class="mood-button" style="background-color: #32CD32;" onclick="displayMessage('Excited')"><span>Excited</span></button>
+									<button class="mood-button" style="background-color: #98FB98;" onclick="displayMessage('Calm')"><span>Calm</span></button>
+									<button class="mood-button" style="background-color: #D3D3D3;" onclick="displayMessage('Bored')"><span>Bored</span></button>
+									<button class="mood-button" style="background-color: #A9A9A9;" onclick="displayMessage('Confused')"><span>Confused</span></button>
+								</div>
+								
+								<!-- Message Display -->
+								<div id="message"></div>
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+                <footer id="footer">
+                    <section>
+                        <h2>Why?</h2>
+                        <p>A mental health website is essential for providing accessible support, information, and tools for managing mental well-being. It offers a private, convenient space for users to learn about mental health, track their moods, and find coping strategies. By reducing stigma and fostering a sense of community, it helps individuals feel less isolated and more empowered. Overall, it bridges the gap between those in need and the resources that can help them.</p>
+                    </section>
+                    <section>
+                        <h2>About</h2>
+                        <dl class="alt">
+                            <dt>Names</dt>
+                            <dd>Adhish Pradhan<br />
+							    Naysa Madrele</dd>
+                        </dl>
+                    </section>
+                </footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+			<!-- Custom JavaScript -->
+			<script>
+				function displayMessage(mood) {
+					const messageDiv = document.getElementById('message');
+					let message = "";
+
+					// Assigning message based on the selected mood
+					switch(mood) {
+						case 'Happy':
+							message = "Feeling joyful, content, or pleased. Often associated with positive events or situations.";
+							break;
+						case 'Sad':
+							message = "Feeling down, sorrowful, or upset. It can stem from personal loss, disappointment, or negative experiences.";
+							break;
+						case 'Angry':
+							message = "Feeling irritated, frustrated, or hostile. It may arise from feeling wronged or under pressure.";
+							break;
+						case 'Anxious':
+							message = "Feeling nervous, worried, or uneasy about potential outcomes, often due to uncertainty or fear.";
+							break;
+						case 'Excited':
+							message = "Feeling thrilled, eager, or enthusiastic about something in the future.";
+							break;
+						case 'Calm':
+							message = "Feeling peaceful, relaxed, or serene, often when one is at ease with the present moment.";
+							break;
+						case 'Bored':
+							message = "Feeling uninterested, unstimulated, or disengaged, often due to a lack of activity or variety.";
+							break;
+						case 'Confused':
+							message = "Feeling uncertain, disoriented, or unclear about something, leading to difficulty in decision-making or understanding.";
+							break;
+						default:
+							message = "Please select a mood.";
+					}
+
+					// Displaying the message
+					messageDiv.innerHTML = message;
+				}
+			</script>
+
+	</body>
+</html>
